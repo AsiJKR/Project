@@ -22,8 +22,6 @@
           <input type="number" onchange="(function(el){el.value=parseFloat(el.value).toFixed(2);})(this)" 
           class="form-control" id="txtSales" name="txtSalesn" ng-model="salesprice" required="">
 
-          <!-- <input type="number" class="form-control" name="txtSalesn" ng-model="salesprice" required=""> -->
-
     <div ng-show="form.$submitted || form.txtSalesn.$touched">
       <div ng-show="form.txtSalesn.$error.required" style="color: red;">*Sales price is required</div>
     </div>

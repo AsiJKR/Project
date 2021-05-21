@@ -1,78 +1,75 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-  <script src="https://code.angularjs.org/1.4.9/angular.js" data-semver="1.4.9"></script>
-  <script src="script.js"></script>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-</head>
-<body ng-app="myApp" ng-controller="MainCtrl">
-  <div>
-    <form name="form" id="forms" class="css-form" novalidate ng-submit="form.$valid">
-      <br>
-        <div class="col-sm-12">
-          <label>Input Sales</label>
-          </div>
-
-        <div class="col-sm-6">
-          <input type="number" onchange="(function(el){el.value=parseFloat(el.value).toFixed(2);})(this)" 
-          class="form-control" id="txtSales" name="txtSalesn" ng-model="salesprice" required="">
-
-    <div ng-show="form.$submitted || form.txtSalesn.$touched">
-      <div ng-show="form.txtSalesn.$error.required" style="color: red;">*Sales price is required</div>
-    </div>
-  </div>
-          <div class="col-sm-6">
-            <input type="submit" class="btn btn-primary" id="btnSubmit" value="Submit">
-        </div>
-        </div>
-        <div class="col-md-12">
-            <br><br><hr>
-        </div>
+   <head>
+      <script src="https://code.angularjs.org/1.4.9/angular.js" data-semver="1.4.9"></script>
+      <script src="script.js"></script>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   </head>
+   <body ng-app="myApp" ng-controller="MainCtrl">
+      <div>
+         <form name="form" id="forms" class="css-form" novalidate ng-submit="form.$valid">
+            <br>
+            <div class="col-sm-12">
+               <label>Input Sales</label>
+            </div>
+            <div class="col-sm-6">
+               <input type="number" onchange="(function(el){el.value=parseFloat(el.value).toFixed(2);})(this)" 
+                  class="form-control" id="txtSales" name="txtSalesn" ng-model="salesprice" required="">
+               <div ng-show="form.$submitted || form.txtSalesn.$touched">
+                  <div ng-show="form.txtSalesn.$error.required" style="color: red;">*Sales price is required</div>
+               </div>
+            </div>
+            <div class="col-sm-6">
+               <input type="submit" class="btn btn-primary" id="btnSubmit" value="Submit">
+            </div>
+      </div>
+      <div class="col-md-12">
+      <br><br><hr>
+      </div>
       <br>
       <div class="col-sm-3 col-md-6">
+        <h3>Direct material in units needed for production</h3><br/><hr>
       <div class="form-group">
-        <label>Budgeted Production During the Period</label>
-        <input type="text" class="form-control" id="txtBudgetproduction" ng-model="budgetedproduction" ng-bind="{{budgetedproduction= salesprice / valuex }}">
-      </div>
-      <div class="form-group">
-        <label>Units of Direct Material Required per Unit</label>
-        <input type="text" class="form-control" id="txtUnitDirectMaterial" ng-model="unitdirectmaterial" ng-bind="{{unitdirectmaterial=valuey}}">
+      <label>Budgeted Production During the Period</label>
+      <input onchange="(function(el){el.value=parseFloat(el.value).toFixed(2);})(this)"  ng-show="form.txtSalesn.$dirty && form.$submitted" type="text" class="form-control" id="txtBudgetproduction" ng-model="budgetedproduction" ng-bind="{{budgetedproduction= salesprice / valuex }}">
       </div>
       <div class="form-group">
-        <label>Direct Material in Units Needed for Production</label>
-        <input type="text" class="form-control" id="txtDirectMatNeeded" ng-model="directmatneeded" ng-bind="{{directmatneeded=valuex*valuey}}">
-      </div>
-    </div>
-
-    <div class="col-sm-3 col-md-6">
-      <div class="form-group">
-        <label>Planned Production in units</label>
-        <input type="text" class="form-control" id="txtPlannedProdInUnits" ng-model="planneprodinunits" ng-bind="{{planneprodinunits=budgetedproduction}}">
+      <label>Units of Direct Material Required per Unit</label>
+      <input onchange="(function(el){el.value=parseFloat(el.value).toFixed(2);})(this)"  ng-show="form.txtSalesn.$dirty && form.$submitted" type="text" class="form-control" id="txtUnitDirectMaterial" ng-model="unitdirectmaterial" ng-bind="{{unitdirectmaterial=valuey}}">
       </div>
       <div class="form-group">
-        <label>Direct Labor Hours Required per Unit</label>
-        <input type="text" class="form-control" id="txtDirectLaborHoursReq" ng-model="directlaborhoursreq" ng-bind="{{directlaborhoursreq=valuey}}">
+      <label>Direct Material in Units Needed for Production</label>
+      <input onchange="(function(el){el.value=parseFloat(el.value).toFixed(2);})(this)"  ng-show="form.txtSalesn.$dirty && form.$submitted" type="text" class="form-control" id="txtDirectMatNeeded" ng-model="directmatneeded" ng-bind="{{directmatneeded=valuex*valuey}}">
+      </div>
+      </div>
+      <div class="col-sm-3 col-md-6">
+        <h3>Direct Labor Budget</h3><br/><hr>
+      <div class="form-group">
+      <label>Planned Production in units</label>
+      <input onchange="(function(el){el.value=parseFloat(el.value).toFixed(2);})(this)"  ng-show="form.txtSalesn.$dirty && form.$submitted" type="text" class="form-control" id="txtPlannedProdInUnits" ng-model="planneprodinunits" ng-bind="{{planneprodinunits=budgetedproduction}}">
       </div>
       <div class="form-group">
-        <label>Budgeted Direct Labor Hours Required</label>
-        <input type="text" class="form-control" id="txtBudgetDirectLaborHours" ng-model="budgetedlaborhours" ng-bind="{{budgetedlaborhours=directmatneeded}}">
+      <label>Direct Labor Hours Required per Unit</label>
+      <input onchange="(function(el){el.value=parseFloat(el.value).toFixed(2);})(this)"  ng-show="form.txtSalesn.$dirty && form.$submitted" type="text" class="form-control" id="txtDirectLaborHoursReq" ng-model="directlaborhoursreq" ng-bind="{{directlaborhoursreq=valuey}}">
       </div>
       <div class="form-group">
-        <label>Cost per Direct Labor Hours</label>
-        <input type="text" class="form-control" id="txtCostPerDirectHours" ng-model="costperdirecthours" ng-bind="{{costperdirecthours=valuez}}">
+      <label>Budgeted Direct Labor Hours Required</label>
+      <input onchange="(function(el){el.value=parseFloat(el.value).toFixed(2);})(this)"  ng-show="form.txtSalesn.$dirty && form.$submitted" type="text" class="form-control" id="txtBudgetDirectLaborHours" ng-model="budgetedlaborhours" ng-bind="{{budgetedlaborhours=directmatneeded}}">
       </div>
       <div class="form-group">
-        <label>Budgeted Direct Labor Cost</label>
-        <input type="text" class="form-control" id="txtBudgetedLaborCost" ng-model="laborcost" ng-bind="{{laborcost=valuex*valuey*valuez}}">
+      <label>Cost per Direct Labor Hours</label>
+      <input onchange="(function(el){el.value=parseFloat(el.value).toFixed(2);})(this)"  ng-show="form.txtSalesn.$dirty && form.$submitted" type="text" class="form-control" id="txtCostPerDirectHours" ng-model="costperdirecthours" ng-bind="{{costperdirecthours=valuez}}">
+      </div>
+      <div class="form-group">
+      <label>Budgeted Direct Labor Cost</label>
+      <input onchange="(function(el){el.value=parseFloat(el.value).toFixed(2);})(this)"  ng-show="form.txtSalesn.$dirty && form.$submitted" type="text" class="form-control" id="txtBudgetedLaborCost" ng-model="laborcost" ng-bind="{{laborcost=valuex*valuey*valuez}}">
       </div>
       </div>
-    </form>
-  </div>
-</body>
-
+      </form>
+      </div>
+   </body>
 </html>

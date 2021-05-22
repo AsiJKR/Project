@@ -28,48 +28,57 @@
             </div>
       </div>
       <div class="col-md-12">
-      <br><br><hr>
+      <hr>
       </div>
       <br>
-      <div class="col-sm-3 col-md-6">
-        <h3>Direct material in units needed for production</h3><br/><hr>
-      <div class="form-group">
-      <label>Budgeted Production During the Period</label>
-      <input onchange="(function(el){el.value=parseFloat(el.value).toFixed(2);})(this)"  ng-show="form.txtSalesn.$dirty && form.$submitted" type="text" class="form-control" id="txtBudgetproduction" ng-model="budgetedproduction" ng-bind="{{budgetedproduction= salesprice / valuex }}">
-      </div>
-      <div class="form-group">
-      <label>Units of Direct Material Required per Unit</label>
-      <input onchange="(function(el){el.value=parseFloat(el.value).toFixed(2);})(this)"  ng-show="form.txtSalesn.$dirty && form.$submitted" type="text" class="form-control" id="txtUnitDirectMaterial" ng-model="unitdirectmaterial" ng-bind="{{unitdirectmaterial=valuey}}">
-      </div>
-      <div class="form-group">
-      <label>Direct Material in Units Needed for Production</label>
-      <input onchange="(function(el){el.value=parseFloat(el.value).toFixed(2);})(this)"  ng-show="form.txtSalesn.$dirty && form.$submitted" type="text" class="form-control" id="txtDirectMatNeeded" ng-model="directmatneeded" ng-bind="{{directmatneeded=valuex*valuey}}">
+      <div class="col-md-6">
+      <h3>Direct material in units needed for production</h3><hr>
+      <div class="form-group row">
+      <div class="col-sm-6"><label>Budgeted Production During the Period</label></div>
+      <div class="col-sm-6"><input onchange="(function(el){el.value=parseFloat(el.value).toFixed(2);})(this)"  ng-show="form.txtSalesn.$dirty && form.$submitted" type="text" class="form-control" id="txtBudgetproduction" ng-model="budgetedproduction" ng-bind="{{budgetedproduction= salesprice / valuex }}" disabled>
       </div>
       </div>
-      <div class="col-sm-3 col-md-6">
-        <h3>Direct Labor Budget</h3><br/><hr>
-      <div class="form-group">
-      <label>Planned Production in units</label>
-      <input onchange="(function(el){el.value=parseFloat(el.value).toFixed(2);})(this)"  ng-show="form.txtSalesn.$dirty && form.$submitted" type="text" class="form-control" id="txtPlannedProdInUnits" ng-model="planneprodinunits" ng-bind="{{planneprodinunits=budgetedproduction}}">
+      <div class="form-group row">
+      <div class="col-sm-6"><label>Units of Direct Material Required per Unit</label></div>
+      <div class="col-sm-6"><input onchange="(function(el){el.value=parseFloat(el.value).toFixed(2);})(this)"  ng-show="form.txtSalesn.$dirty && form.$submitted" type="text" class="form-control" id="txtUnitDirectMaterial" ng-model="unitdirectmaterial" ng-bind="{{unitdirectmaterial=valuey}}" disabled>
       </div>
-      <div class="form-group">
-      <label>Direct Labor Hours Required per Unit</label>
-      <input onchange="(function(el){el.value=parseFloat(el.value).toFixed(2);})(this)"  ng-show="form.txtSalesn.$dirty && form.$submitted" type="text" class="form-control" id="txtDirectLaborHoursReq" ng-model="directlaborhoursreq" ng-bind="{{directlaborhoursreq=valuey}}">
       </div>
-      <div class="form-group">
-      <label>Budgeted Direct Labor Hours Required</label>
-      <input onchange="(function(el){el.value=parseFloat(el.value).toFixed(2);})(this)"  ng-show="form.txtSalesn.$dirty && form.$submitted" type="text" class="form-control" id="txtBudgetDirectLaborHours" ng-model="budgetedlaborhours" ng-bind="{{budgetedlaborhours=directmatneeded}}">
+      <div class="form-group row">
+      <div class="col-sm-6"><label>Direct Material in Units Needed for Production</label></div>
+      <div class="col-sm-6"><input onchange="(function(el){el.value=parseFloat(el.value).toFixed(2);})(this)"  ng-show="form.txtSalesn.$dirty && form.$submitted" type="text" class="form-control" id="txtDirectMatNeeded" ng-model="directmatneeded" ng-bind="{{directmatneeded=valuex*valuey}}" disabled>
       </div>
-      <div class="form-group">
-      <label>Cost per Direct Labor Hours</label>
-      <input onchange="(function(el){el.value=parseFloat(el.value).toFixed(2);})(this)"  ng-show="form.txtSalesn.$dirty && form.$submitted" type="text" class="form-control" id="txtCostPerDirectHours" ng-model="costperdirecthours" ng-bind="{{costperdirecthours=valuez}}">
       </div>
-      <div class="form-group">
-      <label>Budgeted Direct Labor Cost</label>
-      <input onchange="(function(el){el.value=parseFloat(el.value).toFixed(2);})(this)"  ng-show="form.txtSalesn.$dirty && form.$submitted" type="text" class="form-control" id="txtBudgetedLaborCost" ng-model="laborcost" ng-bind="{{laborcost=valuex*valuey*valuez}}">
+      <h3>Direct Labor Budget</h3><hr>
+      <div class="form-group row">
+      <div class="col-sm-6"><label>Planned Production in units</label></div>
+      <div class="col-sm-6"><input onchange="(function(el){el.value=parseFloat(el.value).toFixed(2);})(this)"  ng-show="form.txtSalesn.$dirty && form.$submitted" type="text" class="form-control" id="txtPlannedProdInUnits" ng-model="planneprodinunits" ng-bind="{{planneprodinunits=budgetedproduction}}" disabled>
+      </div>
+      </div>
+      <div class="form-group row">
+      <div class="col-sm-6"><label>Direct Labor Hours Required per Unit</label></div>
+      <div class="col-sm-6"><input onchange="(function(el){el.value=parseFloat(el.value).toFixed(2);})(this)"  ng-show="form.txtSalesn.$dirty && form.$submitted" type="text" class="form-control" id="txtDirectLaborHoursReq" ng-model="directlaborhoursreq" ng-bind="{{directlaborhoursreq=valuey}}" disabled>
+      </div>
+      </div>
+      <div class="form-group row">
+      <div class="col-sm-6"><label>Budgeted Direct Labor Hours Required</label></div>
+      <div class="col-sm-6">
+      <input onchange="(function(el){el.value=parseFloat(el.value).toFixed(2);})(this)"  ng-show="form.txtSalesn.$dirty && form.$submitted" type="text" class="form-control" id="txtBudgetDirectLaborHours" ng-model="budgetedlaborhours" ng-bind="{{budgetedlaborhours=directmatneeded}}" disabled>
+      </div>   
+      </div>
+      <div class="form-group row">
+      <div class="col-sm-6"><label>Cost per Direct Labor Hours</label></div>
+      <div class="col-sm-6">
+      <input onchange="(function(el){el.value=parseFloat(el.value).toFixed(2);})(this)"  ng-show="form.txtSalesn.$dirty && form.$submitted" type="text" class="form-control" id="txtCostPerDirectHours" ng-model="costperdirecthours" ng-bind="{{costperdirecthours=valuez}}" disabled>
+      </div>   
+      </div>
+      <div class="form-group row">
+      <div class="col-sm-6"><label>Budgeted Direct Labor Cost</label><br/>
+      </div>
+      <div class="col-sm-6">
+      <input onchange="(function(el){el.value=parseFloat(el.value).toFixed(2);})(this)"  ng-show="form.txtSalesn.$dirty && form.$submitted" type="text" class="form-control" id="txtBudgetedLaborCost" ng-model="laborcost" ng-bind="{{laborcost=valuex*valuey*valuez}}" disabled> 
+      </div>
       </div>
       </div>
       </form>
-      </div>
    </body>
 </html>

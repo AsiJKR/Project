@@ -56,13 +56,13 @@
       </div>
       <div class="form-group row">
       <div class="col-sm-6"><label>Direct Labor Hours Required per Unit</label></div>
-      <div class="col-sm-6"><input onchange="(function(el){el.value=parseFloat(el.value).toFixed(2);})(this)"  ng-show="form.txtSalesn.$dirty && form.$submitted" type="text" class="form-control" id="txtDirectLaborHoursReq" ng-model="directlaborhoursreq" ng-bind="{{directlaborhoursreq=valuey}}" disabled>
+      <div class="col-sm-6"><input onchange="(function(el){el.value=parseFloat(el.value).toFixed(2);})(this)"  ng-show="form.txtSalesn.$dirty && form.$submitted" type="text" class="form-control" id="txtDirectLaborHoursReq" ng-model="directlaborhoursreq" ng-bind="{{directlaborhoursreq=values}}" disabled>
       </div>
       </div>
       <div class="form-group row">
       <div class="col-sm-6"><label>Budgeted Direct Labor Hours Required</label></div>
       <div class="col-sm-6">
-      <input onchange="(function(el){el.value=parseFloat(el.value).toFixed(2);})(this)"  ng-show="form.txtSalesn.$dirty && form.$submitted" type="text" class="form-control" id="txtBudgetDirectLaborHours" ng-model="budgetedlaborhours" ng-bind="{{budgetedlaborhours=directmatneeded}}" disabled>
+      <input onchange="(function(el){el.value=parseFloat(el.value).toFixed(2);})(this)"  ng-show="form.txtSalesn.$dirty && form.$submitted" type="text" class="form-control" id="txtBudgetDirectLaborHours" ng-model="budgetedlaborhours" ng-bind="{{budgetedlaborhours=valuex*values}}" disabled>
       </div>   
       </div>
       <div class="form-group row">
@@ -75,7 +75,7 @@
       <div class="col-sm-6"><label>Budgeted Direct Labor Cost</label><br/>
       </div>
       <div class="col-sm-6">
-      <input onchange="(function(el){el.value=parseFloat(el.value).toFixed(2);})(this)"  ng-show="form.txtSalesn.$dirty && form.$submitted" type="text" class="form-control" id="txtBudgetedLaborCost" ng-model="laborcost" ng-bind="{{laborcost=valuex*valuey*valuez}}" disabled> 
+      <input onchange="(function(el){el.value=parseFloat(el.value).toFixed(2);})(this)"  ng-show="form.txtSalesn.$dirty && form.$submitted" type="text" class="form-control" id="txtBudgetedLaborCost" ng-model="laborcost" ng-bind="{{laborcost=valuex*values*valuez}}" disabled> 
       </div>
       </div>
       </div>
